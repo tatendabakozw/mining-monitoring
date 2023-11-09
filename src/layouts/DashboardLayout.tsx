@@ -11,7 +11,7 @@ const DashboardLayout = (props: Props): ReactElement => {
   return (
     <main className="flex h-screen w-full flex-col">
       <div className="flex w-full flex-1 overflow-hidden bg-gray-100">
-        <div className="flex">
+        <div className="flex w-1/5">
           <DashboardSidebar
             sidebarOpen={sidebarOpen}
             setSidebarOpen={setSidebarOpen}

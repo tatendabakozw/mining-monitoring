@@ -1,12 +1,14 @@
-import DashboardLayout from '@layouts/DashboardLayout'
-import React from 'react'
+import DashboardLayout from "@layouts/DashboardLayout";
+import React from "react";
 
-type Props = {}
+type Props = {};
 
 const Dashboard = (props: Props) => {
   return (
-    <DashboardLayout>Dashboard</DashboardLayout>
-  )
-}
+    <DashboardLayout>
+      <div className="flex p-4">Dashboard</div>
+    </DashboardLayout>
+  );
+};
 
-export default Dashboard
+export default Dashboard;
