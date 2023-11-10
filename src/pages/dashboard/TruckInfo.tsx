@@ -1,3 +1,4 @@
+import BarChart from "@components/bar-chat/BarChart";
 import DashboardLayout from "@layouts/DashboardLayout";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import { Doughnut } from "react-chartjs-2";
@@ -83,7 +84,7 @@ const TruckInfo = () => {
                   latitude: 37.8,
                   zoom: 14,
                 }}
-                style={{ width: 600, height: 400, borderRadius: 10 }}
+                style={{ width: "100%", height: "100%", borderRadius: 10 }}
                 mapStyle="mapbox://styles/mapbox/streets-v9"
               />
             </div>
@@ -120,6 +121,9 @@ const TruckInfo = () => {
                     <div className="col-span-1">{item.to_dump}</div>
                   </div>
                 ))}
+              </div>
+              <div className="col-span-2  bg-white p-4 rounded-xl flex flex-col">
+                <BarChart />
               </div>
             </div>
           </div>

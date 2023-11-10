@@ -1132,6 +1132,11 @@
   resolved "https://registry.npmjs.org/@esbuild/darwin-x64/-/darwin-x64-0.16.16.tgz"
   integrity sha512-CYkxVvkZzGCqFrt7EgjFxQKhlUPyDkuR9P0Y5wEcmJqVI8ncerOIY5Kej52MhZyzOBXkYrJgZeVZC9xXXoEg9A==
 
+"@faker-js/faker@^8.2.0":
+  version "8.2.0"
+  resolved "https://registry.npmjs.org/@faker-js/faker/-/faker-8.2.0.tgz"
+  integrity sha512-VacmzZqVxdWdf9y64lDOMZNDMM/FQdtM9IsaOPKOm2suYwEatb8VkdHqOzXcDnZbk7YDE2BmsJmy/2Hmkn563g==
+
 "@headlessui/react@^1.7.14":
   version "1.7.14"
   resolved "https://registry.npmjs.org/@headlessui/react/-/react-1.7.14.tgz"
@@ -1758,7 +1763,7 @@ extend-shallow@^3.0.0:
     assign-symbols "^1.0.0"
     is-extendable "^1.0.1"
 
-faker@*, faker@^6.6.6:
+faker@*:
   version "6.6.6"
   resolved "https://registry.npmjs.org/faker/-/faker-6.6.6.tgz"
   integrity sha512-9tCqYEDHI5RYFQigXFwF1hnCwcWCOJl/hmll0lr5D2Ljjb0o4wphb69wikeJDz5qCEzXCoPvG6ss5SDP6IfOdg==
