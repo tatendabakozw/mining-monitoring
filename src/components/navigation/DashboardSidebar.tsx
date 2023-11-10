@@ -23,7 +23,7 @@ const navigation = [
     icon: TruckIcon,
     current: false,
   },
-  { name: "Store Settings", href: "/dashboard/settings", icon: CogIcon },
+  // { name: "Store Settings", href: "/dashboard/settings", icon: CogIcon },
 ];
 
 interface Props {

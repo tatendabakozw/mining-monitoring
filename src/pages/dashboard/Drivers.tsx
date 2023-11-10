@@ -1,17 +1,42 @@
-import { Avatar } from "@chakra-ui/react";
 import { TrashIcon } from "@heroicons/react/24/outline";
 import DashboardLayout from "@layouts/DashboardLayout";
-import React from "react";
+import {
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
+  ModalBody,
+  ModalCloseButton,
+  useDisclosure,
+} from "@chakra-ui/react";
+import PrimaryButton from "@components/buttons/PrimaryButton";
 
 type Props = {};
 
 const Drivers = (props: Props) => {
-    const drivers = [
-        {name: 'Tatenda Bako', bus: '43RETSD', status: 'in-route', _id: 'aadsf233'},
-        {name: 'Maxwell Muvhi', bus: 'FERERSS', status: 'stationary', _id: 'ad4SSdsf'},
-        {name: 'Tadiwa Muswe', bus: 'DSD3AAS', status: 'in-route', _id: 'cvsasd2'},
-        {name: 'Mike Minda', bus: '6DFSDDF', status: 'in-route', _id: 'vadsf230'},
-    ]
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const drivers = [
+    {
+      name: "Tatenda Bako",
+      bus: "43RETSD",
+      status: "in-route",
+      _id: "aadsf233",
+    },
+    {
+      name: "Maxwell Muvhi",
+      bus: "FERERSS",
+      status: "stationary",
+      _id: "ad4SSdsf",
+    },
+    {
+      name: "Tadiwa Muswe",
+      bus: "DSD3AAS",
+      status: "in-route",
+      _id: "cvsasd2",
+    },
+    { name: "Mike Minda", bus: "6DFSDDF", status: "in-route", _id: "vadsf230" },
+  ];
   return (
     <DashboardLayout>
       <div className="flex flex-col p-6 space-y-4">
@@ -39,7 +64,29 @@ const Drivers = (props: Props) => {
               </p>
             </div>
             <div className="col-span-1">
-              <TrashIcon height={16} width={16} />
+              <div className="flex">
+                <>
+                  <div
+                    // onClick={onOpen}
+                    className="flex cursor-pointer p-2 rounded-full bg-slate-50"
+                  >
+                    <TrashIcon height={16} width={16} />
+                  </div>
+
+                  {/* <Modal isOpen={isOpen} onClose={onClose}>
+                    <ModalOverlay />
+                    <ModalContent>
+                      <ModalHeader>Delete Item</ModalHeader>
+                      <ModalCloseButton />
+                      <ModalBody>
+                        asdakhflkjsdhfkj
+                      </ModalBody>
+
+                     <PrimaryButton text="Delete Item" />
+                    </ModalContent>
+                  </Modal> */}
+                </>
+              </div>
             </div>
           </div>
         ))}
