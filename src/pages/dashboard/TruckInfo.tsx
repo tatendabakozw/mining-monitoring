@@ -1,4 +1,5 @@
 import BarChart from "@components/bar-chat/BarChart";
+import HaulageProfiles from "@components/haulage-profiles/HaulageProfiles";
 import DashboardLayout from "@layouts/DashboardLayout";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import { Doughnut } from "react-chartjs-2";
@@ -6,13 +7,7 @@ import Map from "react-map-gl";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-const haulage_profiles = [
-  { distance: 112, kph: 16.0, description: "Pit floor near shovel" },
-  { distance: 550, kph: 17.0, description: "Pit floor" },
-  { distance: 841, kph: 25.0, description: "Pit ramp" },
-  { distance: 500, kph: 12.0, description: "Surface" },
-  { distance: 122, kph: 25.0, description: "All crusher area" },
-];
+
 
 const haulage_cycles = [
   { activity: "Spot time load", to_crusher: 1.92, to_dump: 2.0 },
@@ -56,23 +51,7 @@ const TruckInfo = () => {
         <div className="grid grid-cols-2 gap-8">
           {/* table for haulage profile */}
           <div className="flex flex-col space-y-8">
-            <div className="flex flex-col bg-white p-4 rounded-xl">
-              <div className="grid grid-cols-4 border-b border-slate-100 text-slate-900 font-semibold pb-2 mb-2">
-                <div className="col-span-1">Distance (m)</div>
-                <div className="col-span-1">Kph limit</div>
-                <div className="col-span-1">Description</div>
-              </div>
-              {haulage_profiles.map((item, index) => (
-                <div
-                  key={index}
-                  className="grid grid-cols-4 pb-2 text-slate-500 text-sm font-medium"
-                >
-                  <div className="col-span-1">{item.distance}</div>
-                  <div className="col-span-1">{item.kph}</div>
-                  <div className="col-span-1">{item.description}</div>
-                </div>
-              ))}
-            </div>
+            <HaulageProfiles />
             <div className="bg-white p-4 rounded-xl">
               <p className="text-sm font-semibold text-slate-900 pb-4">
                 Current Truck Location
