@@ -1,4 +1,4 @@
-import { TrashIcon } from "@heroicons/react/24/outline";
+import { InformationCircleIcon, TrashIcon } from "@heroicons/react/24/outline";
 import DashboardLayout from "@layouts/DashboardLayout";
 import {
   Modal,
@@ -11,6 +11,7 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 import PrimaryButton from "@components/buttons/PrimaryButton";
+import { Link } from "react-router-dom";
 
 type Props = {};
 
@@ -72,6 +73,9 @@ const Drivers = (props: Props) => {
                   >
                     <TrashIcon height={16} width={16} />
                   </div>
+                  <Link  className="flex cursor-pointer p-2 rounded-full bg-slate-50" to='/dashboard/driver-info'>
+                    <InformationCircleIcon height={16} width={16}  />
+                  </Link>
 
                   {/* <Modal isOpen={isOpen} onClose={onClose}>
                     <ModalOverlay />
