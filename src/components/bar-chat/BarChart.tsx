@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -7,9 +7,10 @@ import {
   Title,
   Tooltip,
   Legend,
-} from "chart.js";
-import { Bar } from "react-chartjs-2";
+} from 'chart.js';
+import { Bar } from 'react-chartjs-2';
 import {faker} from "@faker-js/faker";
+import { data } from '@utils/data';
 
 ChartJS.register(
   CategoryScale,
@@ -21,49 +22,38 @@ ChartJS.register(
 );
 
 export const options = {
-  indexAxis: "y" as const,
-  elements: {
-    bar: {
-      borderWidth: 2,
-    },
-  },
   responsive: true,
   plugins: {
     legend: {
-      position: "right" as const,
+      position: 'top' as const,
     },
     title: {
       display: true,
-      text: "Productive vs Unproductive",
+      text: 'Averuage Haulage cycles',
     },
   },
 };
 
-const labels = ["January", "February", "March", "April", "May", "June", "July"];
-export const data = {
+const labels = ['Spot time load', 'Spot time dump', 'Spot time haul', 'Spot time load', 'Load time', 'Full haul'];
+
+export const graphdata = {
   labels,
   datasets: [
     {
-      label: "Productive",
-      data: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
-      borderColor: "rgb(255, 99, 132)",
-      backgroundColor: "rgba(255, 99, 132, 0.5)",
+      label: 'to crusher',
+      // data: labels.map(() => faker.number.int({ min: 0, max: 1000 })),
+      data: data.haulage_cycles.map((cycle) => cycle.to_crusher),
+      backgroundColor: 'rgba(255, 99, 132, 0.5)',
     },
     {
-      label: "Unproductive",
-      data: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
-      borderColor: "rgb(53, 162, 235)",
-      backgroundColor: "rgba(53, 162, 235, 0.5)",
+      label: 'to dump',
+      data: data.haulage_cycles.map((cycle) => cycle.to_dump),
+      backgroundColor: 'rgba(53, 162, 235, 0.5)',
     },
   ],
 };
+ function BarChart() {
+  return <Bar options={options} data={graphdata} />;
+}
 
-type Props = {};
-
-const BarChart = (props: Props) => {
-  return <div className="flex w-full">
-    <Bar options={options} data={data} />
-  </div>;
-};
-
-export default BarChart;
+export default BarChart

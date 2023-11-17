@@ -4,19 +4,12 @@ import DashboardLayout from "@layouts/DashboardLayout";
 import BarChart from "@components/bar-chat/BarChart";
 import { Doughnut } from "react-chartjs-2";
 import Map from "react-map-gl";
+import { data } from "@utils/data";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-const haulage_cycles = [
-  { activity: "Spot time load", to_crusher: 1.92, to_dump: 2.0, },
-  { activity: "Spot time dump", to_crusher: 0.81, to_dump: 0.9 },
-  { activity: "Spot time haul", to_crusher: 1.97, to_dump: 2.0 },
-  { activity: "Spot time load", to_crusher: 3.82, to_dump: 5.5 },
-  { activity: "Load time", to_crusher: 2.23, to_dump: 2.3 },
-  { activity: "Full Haul", to_crusher: 8.04, to_dump: 7.9 },
-];
 
-export const data = {
+export const firstdata = {
   labels: ["Unproductive Time", "Productive Time"],
   datasets: [
     {
@@ -73,7 +66,7 @@ const TruckInfo = () => {
                 <p className="text-sm font-medium text-center pb-8">
                   Truck Fleet
                 </p>
-                <Doughnut data={data} />
+                <Doughnut data={firstdata} />
               </div>
               <div className="bg-white rounded-xl p-4">
                 <p className="text-sm font-medium text-center pb-8">
@@ -90,7 +83,7 @@ const TruckInfo = () => {
                   <div className="col-span-1">To Crusher</div>
                   <div className="col-span-1">To Dump</div>
                 </div>
-                {haulage_cycles.map((item, index) => (
+                {data.haulage_cycles.map((item, index) => (
                   <div
                     key={index}
                     className="grid grid-cols-4 pb-2 text-slate-500 text-sm font-medium"
@@ -102,8 +95,8 @@ const TruckInfo = () => {
                 ))}
                 <div className="grid grid-cols-4 text-slate-900 font-medium">
                   <div className="col-span-2">total cycle time</div>
-                  <div className="col-span-1">{haulage_cycles.reduce((n, {to_crusher}) => n + to_crusher, 0)}</div>
-                    <div className="col-span-1">{haulage_cycles.reduce((n, {to_dump}) => n + to_dump, 0)}</div>
+                  <div className="col-span-1">{data.haulage_cycles.reduce((n, {to_crusher}) => n + to_crusher, 0)}</div>
+                    <div className="col-span-1">{data.haulage_cycles.reduce((n, {to_dump}) => n + to_dump, 0)}</div>
                 </div>
               </div>
               <div className="col-span-2  bg-white p-4 rounded-xl flex flex-col">
