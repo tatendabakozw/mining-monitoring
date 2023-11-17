@@ -68,12 +68,12 @@ const TruckInfo = () => {
                 </p>
                 <Doughnut data={firstdata} />
               </div>
-              <div className="bg-white rounded-xl p-4">
+              {/* <div className="bg-white rounded-xl p-4">
                 <p className="text-sm font-medium text-center pb-8">
                   Truck One shovel 1 ore
                 </p>
                 <Doughnut data={data1} />
-              </div>
+              </div> */}
               <div className="flex flex-col col-span-2 bg-white p-4 rounded-xl">
                 <p className="pb-4 text-slate-900 font-semibold text-sm">
                   Average Haulage Cycle Time

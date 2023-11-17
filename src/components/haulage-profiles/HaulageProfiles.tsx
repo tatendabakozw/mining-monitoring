@@ -18,8 +18,8 @@ const un_productive_haulage_profiles = [
 ];
 
 const component_tabs = [
-  { naame: "Productive", _id: "productive" },
-  { naame: "Unproductive", _id: "un-productive" },
+  { naame: "Expected", _id: "productive" },
+  { naame: "Actual", _id: "un-productive" },
 ];
 
 const HaulageProfiles = (props: Props) => {

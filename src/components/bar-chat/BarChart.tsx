@@ -9,7 +9,6 @@ import {
   Legend,
 } from 'chart.js';
 import { Bar } from 'react-chartjs-2';
-import {faker} from "@faker-js/faker";
 import { data } from '@utils/data';
 
 ChartJS.register(
@@ -41,7 +40,6 @@ export const graphdata = {
   datasets: [
     {
       label: 'to crusher',
-      // data: labels.map(() => faker.number.int({ min: 0, max: 1000 })),
       data: data.haulage_cycles.map((cycle) => cycle.to_crusher),
       backgroundColor: 'rgba(255, 99, 132, 0.5)',
     },
