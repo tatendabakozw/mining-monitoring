@@ -5,9 +5,9 @@ import BarChart from "@components/bar-chat/BarChart";
 import { Doughnut } from "react-chartjs-2";
 import Map from "react-map-gl";
 import { data } from "@utils/data";
+import CycleTime from "@components/cycle-time/CycleTime";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
-
 
 export const firstdata = {
   labels: ["Unproductive Time", "Productive Time"],
@@ -54,7 +54,7 @@ const TruckInfo = () => {
                   latitude: 37.8,
                   zoom: 14,
                 }}
-                style={{ width: "100%", height: "100%", borderRadius: 10 }}
+                style={{ width: "100%", height: "50vh", borderRadius: 10 }}
                 mapStyle="mapbox://styles/mapbox/streets-v9"
               />
             </div>
@@ -74,31 +74,7 @@ const TruckInfo = () => {
                 </p>
                 <Doughnut data={data1} />
               </div> */}
-              <div className="flex flex-col col-span-2 bg-white p-4 rounded-xl">
-                <p className="pb-4 text-slate-900 font-semibold text-sm">
-                  Average Haulage Cycle Time
-                </p>
-                <div className="grid grid-cols-4 border-b border-slate-100 text-slate-900 font-semibold pb-2 mb-2">
-                  <div className="col-span-2">Activity</div>
-                  <div className="col-span-1">To Crusher</div>
-                  <div className="col-span-1">To Dump</div>
-                </div>
-                {data.haulage_cycles.map((item, index) => (
-                  <div
-                    key={index}
-                    className="grid grid-cols-4 pb-2 text-slate-500 text-sm font-medium"
-                  >
-                    <div className="col-span-2">{item.activity}</div>
-                    <div className="col-span-1">{item.to_crusher}</div>
-                    <div className="col-span-1">{item.to_dump}</div>
-                  </div>
-                ))}
-                <div className="grid grid-cols-4 text-slate-900 font-medium">
-                  <div className="col-span-2">total cycle time</div>
-                  <div className="col-span-1">{data.haulage_cycles.reduce((n, {to_crusher}) => n + to_crusher, 0)}</div>
-                    <div className="col-span-1">{data.haulage_cycles.reduce((n, {to_dump}) => n + to_dump, 0)}</div>
-                </div>
-              </div>
+              <CycleTime />
               <div className="col-span-2  bg-white p-4 rounded-xl flex flex-col">
                 <BarChart />
               </div>
