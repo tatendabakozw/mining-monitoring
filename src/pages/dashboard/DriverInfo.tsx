@@ -42,13 +42,13 @@ function DriverInfo({}: Props) {
                       <div className="col-span-1">Notes</div>
                     </div>
                     {[1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 11, 12].map((item) => (
-                      <div key={item} className="grid grid-cols-6 p-2 rounded-lg mt-4 divide-x-[1px] divide-y-[1px] divide-slate-200">
-                        <div className="col-span-1">{item}</div>
-                        <div className="col-span-1"></div>
-                        <div className="col-span-1"></div>
-                        <div className="col-span-1"></div>
-                        <div className="col-span-1"></div>
-                        <div className="col-span-1"></div>
+                      <div key={item} className="grid grid-cols-6 p-2 rounded-lg mt-4 border border-slate-200">
+                        <div className="col-span-1 border-r border-slate-200">{item}</div>
+                        <div className="col-span-1 border-r border-slate-200"></div>
+                        <div className="col-span-1 border-r border-slate-200"></div>
+                        <div className="col-span-1 border-r border-slate-200"></div>
+                        <div className="col-span-1 border-r border-slate-200"></div>
+                        <div className="col-span-1 border-r border-slate-200"></div>
                       </div>
                     ))}
                   </>
