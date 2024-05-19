@@ -1,3 +1,4 @@
+import NotificationMenu from "@components/notification-menu/NotificationMenu";
 import {
   ArrowRightOnRectangleIcon,
   Bars3Icon,
@@ -12,6 +13,8 @@ interface Props {
 
 const DashboardNavbar = ({ setSidebarOpen }: Props) => {
   const [query, setQuery] = useState<string>("");
+  const [notifications_menu, setOpenNotificationMenu] =
+    useState<boolean>(false);
 
   const search_items_handler = (e: any) => {
     e.preventDefault();
@@ -73,12 +76,24 @@ const DashboardNavbar = ({ setSidebarOpen }: Props) => {
           </div>
           <div className="ml-4 flex items-center md:ml-6 space-x-4">
             <button
+              onClick={() =>
+                !notifications_menu
+                  ? setOpenNotificationMenu(true)
+                  : setOpenNotificationMenu(false)
+              }
               type="button"
               className="bg-white p-1 rounded-full text-gray-400 hover:text-gray-500 focus:outline-none"
             >
               <span className="sr-only">View notifications</span>
               <BellIcon className="h-6 w-6" aria-hidden="true" />
             </button>
+            <>
+              <NotificationMenu
+                show={notifications_menu}
+                setShow={setOpenNotificationMenu}
+                loading={false}
+              />
+            </>
             <button
               type="button"
               onClick={logout_user}

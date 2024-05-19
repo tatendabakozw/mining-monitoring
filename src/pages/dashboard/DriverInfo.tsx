@@ -7,7 +7,11 @@ function DriverInfo({}: Props) {
   const [openedItem, setOpenedItem] = useState("");
 
   const page_item = [
-    { name: "Dry preventative maintainance", _id: "dry_maintanance" },
+    {
+      name: "Dry preventative maintainance",
+      _id: "dry_maintanance",
+      info: [{ date: "10/10/24", milage: 27, scheduled_date: "15/12/24" }],
+    },
     { name: "Oil preventative maintainance", _id: "oil_maintanance" },
     {
       name: "Overhead adjustment / engine maintainance",
@@ -41,9 +45,14 @@ function DriverInfo({}: Props) {
                       <div className="col-span-1">Expected Milage</div>
                       <div className="col-span-1">Notes</div>
                     </div>
-                    {[1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 11, 12].map((item) => (
-                      <div key={item} className="grid grid-cols-6 p-2 rounded-lg mt-4 border border-slate-200">
-                        <div className="col-span-1 border-r border-slate-200">{item}</div>
+                    {[1, 2, 3, 4, 5].map((item) => (
+                      <div
+                        key={item}
+                        className="grid grid-cols-6 p-2 rounded-lg mt-4 border border-slate-200"
+                      >
+                        <div className="col-span-1 border-r border-slate-200">
+                          {item}
+                        </div>
                         <div className="col-span-1 border-r border-slate-200"></div>
                         <div className="col-span-1 border-r border-slate-200"></div>
                         <div className="col-span-1 border-r border-slate-200"></div>
