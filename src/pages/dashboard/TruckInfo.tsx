@@ -50,9 +50,9 @@ const TruckInfo = () => {
               <Map
                 mapboxAccessToken="pk.eyJ1IjoidGF0ZW5kYXp3IiwiYSI6ImNsbTdpZGt2NTAweGsza3MyODd5Z20za2UifQ.naBorxMyGM2ewbWQROY4OA"
                 initialViewState={{
-                  longitude: -122.4,
-                  latitude: 37.8,
-                  zoom: 14,
+                  longitude: 31.3102512,
+                  latitude: -17.2989482,
+                  zoom: 10,
                 }}
                 style={{ width: "100%", height: "50vh", borderRadius: 10 }}
                 mapStyle="mapbox://styles/mapbox/streets-v9"

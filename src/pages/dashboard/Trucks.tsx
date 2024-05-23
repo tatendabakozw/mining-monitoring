@@ -35,7 +35,7 @@ const Trucks = (props: Props) => {
   return (
     <DashboardLayout>
       <div className="flex flex-col p-6 space-y-4">
-        <p className="text-5xl text-slate-900 font-bold">Tricks List</p>
+        <p className="text-5xl text-slate-900 font-bold">Trucks List</p>
         <div className="grid grid-cols-6 py-2 text-sm font-medium border-t items-center border-slate-200 border-b text-slate-500">
           <div className="col-span-1">Truck</div>
           <div className="col-span-2">Driver</div>
