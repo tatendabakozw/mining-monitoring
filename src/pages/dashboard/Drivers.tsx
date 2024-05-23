@@ -12,6 +12,7 @@ import {
 } from "@chakra-ui/react";
 import PrimaryButton from "@components/buttons/PrimaryButton";
 import { Link } from "react-router-dom";
+import Clock from "@components/clock/Clock";
 
 type Props = {};
 
@@ -41,7 +42,14 @@ const Drivers = (props: Props) => {
   return (
     <DashboardLayout>
       <div className="flex flex-col p-6 space-y-4">
-        <p className="text-5xl text-slate-900 font-bold">Drivers List</p>
+        <div className="flex flex-row items-center ">
+          <div className="text-5xl text-slate-900 font-bold flex-1">
+            Drivers List
+          </div>
+          <div className="flex">
+            <Clock />
+          </div>
+        </div>
         <div className="grid grid-cols-6 py-2 text-sm font-medium border-t items-center border-slate-200 border-b text-slate-500">
           <div className="col-span-1">Truck</div>
           <div className="col-span-2">Name</div>
@@ -73,8 +81,11 @@ const Drivers = (props: Props) => {
                   >
                     <TrashIcon height={16} width={16} />
                   </div>
-                  <Link  className="flex cursor-pointer p-2 rounded-full bg-slate-50" to='/dashboard/driver-info'>
-                    <InformationCircleIcon height={16} width={16}  />
+                  <Link
+                    className="flex cursor-pointer p-2 rounded-full bg-slate-50"
+                    to="/dashboard/driver-info"
+                  >
+                    <InformationCircleIcon height={16} width={16} />
                   </Link>
 
                   {/* <Modal isOpen={isOpen} onClose={onClose}>
