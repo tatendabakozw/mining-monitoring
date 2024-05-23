@@ -26,10 +26,23 @@ export const data1 = {
   labels: ["Unproductive Time", "Productive Time"],
   datasets: [
     {
-      label: "# of Votes",
+      label: "# ",
       data: [15, 19],
       backgroundColor: ["rgba(255, 99, 132, 0.2)", "rgba(54, 162, 235, 0.2)"],
       borderColor: ["rgba(255, 99, 132, 1)", "rgba(54, 162, 235, 1)"],
+      borderWidth: 1,
+    },
+  ],
+};
+
+export const fuel = {
+  labels: ["Prev Month Fuel", "Current Fuel"],
+  datasets: [
+    {
+      label: "#",
+      data: [10, 50],
+      backgroundColor: ["rgba(144, 238, 144, 0.2)", "rgba(0, 128, 0, 0.2)"], // Light green and green
+      borderColor: ["rgba(144, 238, 144, 1)", "rgba(0, 128, 0, 1)"], // Light green and green
       borderWidth: 1,
     },
   ],
@@ -62,12 +75,19 @@ const TruckInfo = () => {
           {/* pie charts */}
           <div className="flex flex-col">
             <div className="grid grid-cols-2 gap-8">
-              <div className="bg-white rounded-xl p-4">
+              <div className="col-span-1 bg-white rounded-xl p-4">
                 <p className="text-sm font-medium text-center pb-8">
                   Truck Fleet
                 </p>
                 <Doughnut data={firstdata} />
               </div>
+              <div className="col-span-1 bg-white rounded-xl p-4">
+                <p className="text-sm font-medium text-center pb-8">
+                  fuel Consumption
+                </p>
+                <Doughnut data={fuel} />
+              </div>
+
               {/* <div className="bg-white rounded-xl p-4">
                 <p className="text-sm font-medium text-center pb-8">
                   Truck One shovel 1 ore
