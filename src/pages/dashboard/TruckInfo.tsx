@@ -40,7 +40,7 @@ export const fuel = {
   datasets: [
     {
       label: "#",
-      data: [10, 50],
+      data: [50, 10],
       backgroundColor: ["rgba(144, 238, 144, 0.2)", "rgba(0, 128, 0, 0.2)"], // Light green and green
       borderColor: ["rgba(144, 238, 144, 1)", "rgba(0, 128, 0, 1)"], // Light green and green
       borderWidth: 1,
