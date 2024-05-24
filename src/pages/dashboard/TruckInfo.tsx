@@ -41,8 +41,8 @@ export const fuel = {
     {
       label: "#",
       data: [50, 10],
-      backgroundColor: ["rgba(144, 238, 144, 0.2)", "rgba(0, 128, 0, 0.2)"], // Light green and green
-      borderColor: ["rgba(144, 238, 144, 1)", "rgba(0, 128, 0, 1)"], // Light green and green
+      backgroundColor: ["rgba(0, 123, 255, 0.2)", "rgba(0, 128, 0, 0.2)"], // Blue and green
+      borderColor: ["rgba(0, 123, 255, 1)", "rgba(0, 128, 0, 1)"], // Blue and green
       borderWidth: 1,
     },
   ],
